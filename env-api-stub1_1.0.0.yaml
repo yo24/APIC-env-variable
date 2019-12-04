@@ -1,0 +1,37 @@
+---
+swagger: "2.0"
+info:
+  x-ibm-name: "env-api-stub1"
+  title: "env-api-stub1"
+  version: "1.0.0"
+schemes:
+- "https"
+host: "$(catalog.host)"
+basePath: "/env-api-stub1"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+securityDefinitions: {}
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  assembly:
+    execute:
+    - set-variable:
+        title: "stub1 レスポンス"
+        actions:
+        - set: "message.body"
+          value: "'{\"message\" : \"stub1だよ\" }'"
+        version: "1.0.0"
+  phase: "realized"
+paths:
+  /stub:
+    get:
+      responses:
+        200:
+          description: "200 OK"
+definitions: {}
+tags: []
